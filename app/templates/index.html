@@ -1,0 +1,16 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hi, cloud!</h1>
+{% include 'flash.html' %}
+<div class="well">
+    <form class="form-horizontal" action="" method="post" name="post">
+        <div class="control-group">
+            <div class="controls">
+                <input class="btn btn-primary" type="submit" value="Post!">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
