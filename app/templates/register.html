@@ -6,19 +6,32 @@
 </script>
 {% include 'flash.html' %}
 <div class="well">
-    <h3>Please Sign In !</h3>
+    <h3>Please Register here !</h3>
     <form class="form" action="" method="post" name="login">
         {{form.hidden_tag()}}
         <div class="help-block">Plz enter your name and password below:</div>
-        <div class="controls">
-            {{ form.username(size = 80, class = "span4") }}
+        
+       <div class="controls">
+            username:{{ form.username(size = 80, class = "span4") }}
             {% for error in form.errors.username %}
                 <span class="help-inline">[{{error}}]</span><br>
             {% endfor %}
         </div>
         <div class="controls">
-            {{ form.password(size = 80, class = "span4") }}
+            password:{{ form.password(size = 80, class = "span4") }}
             {% for error in form.errors.password %}
+                <span class="help-inline">[{{error}}]</span><br>
+            {% endfor %}
+        </div>
+        <div class="controls">
+            password again:{{ form.password2(size = 80, class = "span4") }}
+            {% if form.password2 != form.password %}
+                <span class="help-inline">password not the same</span><br>
+            {% endif %}
+        </div>
+        <div class="controls">
+            email address:{{ form.email(size = 80, class = "span4") }}
+            {% for error in form.errors.email %}
                 <span class="help-inline">[{{error}}]</span><br>
             {% endfor %}
         </div>
