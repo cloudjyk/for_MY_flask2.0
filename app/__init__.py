@@ -11,6 +11,8 @@ db = SQLAlchemy(app)
 
 lm = LoginManager()
 lm.init_app(app)
+#设置登录视图，很关键
+lm.login_view = 'login'
 ######
 # from flask_openid import OpenID
 # import os

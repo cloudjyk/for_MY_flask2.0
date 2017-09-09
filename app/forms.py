@@ -28,3 +28,6 @@ class RegForm(FlaskForm):
             return True
     def email_check(self):
         return True
+
+class PostForm(FlaskForm):
+    body = StringField('body',validators=[DataRequired()])
