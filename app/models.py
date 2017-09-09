@@ -43,9 +43,9 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-    # def avatar(self,size):
-    #     # return 'http://www.gravatar.com/avatar/' + '205e460b479e2e5b48aec07710c08d50' + '?d=mm&s=' + str(size)
-    #     return 'http://www.gravatar.com/avatar/' + md5(self.email.encode('utf-8')).hexdigest() + '?d=mm&s=' + str(size)
+    def avatar(self,size):
+        # return 'http://www.gravatar.com/avatar/' + '205e460b479e2e5b48aec07710c08d50' + '?d=mm&s=' + str(size)
+        return 'http://www.gravatar.com/avatar/' + md5(self.email.encode('utf-8')).hexdigest() + '?d=mm&s=' + str(size)
     @staticmethod
     def make_unique_nickname(username):
         if User.query.filter_by(username = username).first() == None:

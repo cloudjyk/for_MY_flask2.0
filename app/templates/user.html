@@ -1,0 +1,29 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Welcome to {{ user.username }}'s home page!</h1>
+{% include 'flash.html' %}
+<table class="table table-hover">
+    <tr>
+        <td width="140px"><a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}" /></a></td>
+        <td>
+            {% if g.user.username != user.username %}
+            <p><a href="http://www.baidu.com">follow</a> | <a href="http://www.baidu.com">unfollow</a></p>
+            {% endif %}
+            <p>{{ user.about_me }}</p>
+        </td>
+    </tr>
+</table>
+
+
+
+
+{% for post in posts %}
+    {% include 'post.html' %}
+{% endfor %}
+
+
+{% endblock %}

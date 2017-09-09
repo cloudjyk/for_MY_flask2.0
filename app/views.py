@@ -25,13 +25,17 @@ def index():
         p = Post(body = body, timestamp = datetime.utcnow(), user_id=g.user.get_id())
         db.session.add(p)
         db.session.commit()
-        form.body.data = ''
+        # form.body.data = ''
+        # 防止重复提交
+        return redirect(url_for('index'))
     # posts = Post.query.filter_by(user_id=g.user.get_id())[::-1]
     posts = Post.query.filter_by(author=g.user)[::-1]
     return render_template('index.html',
         title = 'Home',
+        user = user,
         form = form,
-        posts = posts)
+        posts = posts,
+        username = user.username)
 
 #从数据库加载用户
 @lm.user_loader
@@ -74,7 +78,17 @@ def register():
             return redirect(url_for('login'))
     return render_template('Register.html', title = 'Sign In', form = form)
 
-
+@app.route('/user/<username>', methods = ['GET', 'POST'])
+def user(username):
+    if User.query.filter_by(username = username).first() != None:
+        user = User.query.filter_by(username = username).first()
+        posts = Post.query.filter_by(author = user)[::-1]
+        return render_template('user.html',
+            title = 'Home',
+            user = user,
+            posts = posts)
+    flash('Sorry, this user does not exist!')
+    return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():

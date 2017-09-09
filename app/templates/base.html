@@ -25,7 +25,9 @@
           <a class="brand" href="/">microblog</a>
             <ul class="nav">
               <li><a href="{{ url_for('index') }}">Home</a></li>
+              {% if not g.user.is_authenticated %}
               <li><a href="{{ url_for('register') }}">Register</a></li>
+              {% endif %}
               {% if g.user.is_authenticated %}
               <li><a href="{{ url_for('logout') }}">Logout</a></li>
               {% endif %}
