@@ -4,7 +4,7 @@ from flask import render_template, url_for, flash, redirect, session, request, g
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, lm
 from config import POSTS_PER_PAGE
-from .forms import LoginForm, RegForm, PostForm
+from .forms import LoginForm, RegForm, PostForm, EditForm
 from .models import User, Post
 from hashlib import md5
 from datetime import datetime
@@ -70,7 +70,7 @@ def register():
         if User.query.filter_by(username = form.username.data).first() != None:
             flash('This user already exists, please change your username!')
         elif not form.pw_check():
-            print(form.password.data,form.password2.data)
+            # print(form.password.data,form.password2.data)
             flash('Passwords should be the same, please check!')
         elif not form.email_check():
             flash('Invalid email address!')
@@ -95,6 +95,42 @@ def user(username, page = 1):
             posts = posts)
     flash('Sorry, this user does not exist!')
     return redirect(url_for('index'))
+
+@app.route('/user/<username>/edit', methods = ['GET', 'POST'])
+@login_required
+def edit(username):
+    if username != g.user.username:
+        print(username,g.user.username)
+        flash('You are not authorized to visit this page!')
+        return redirect(url_for('index'))
+    form = EditForm()
+    if form.validate_on_submit():
+        if form.username.data != g.user.username and User.query.filter_by(username = form.username.data).first() != None:
+            flash('This username has been occupied!')
+        else:
+            # former_username = g.user.username
+            g.user.username = form.username.data
+            g.user.about_me = form.about_me.data
+            u = g.user
+            db.session.add(u)
+            db.session.commit()
+            logout_user()
+            login_user(User.query.filter_by(username = form.username.data).first())
+            # login_user(u)            
+            # if former_username != form.username.data:
+            #     print('delete',former_username)
+            #     db.session.delete(User.query.filter_by(username = former_username).first())
+            #     db.session.commit()
+            #
+            # g.user = current_user
+            #
+            flash('Your changes have been saved.')
+            return redirect(url_for('user', username = form.username.data))
+    return render_template('edit.html',
+        title = 'Edit your info',
+        user = g.user,
+        form = form)
+
 
 @app.route('/logout')
 def logout():

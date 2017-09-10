@@ -33,3 +33,7 @@ class RegForm(FlaskForm):
 
 class PostForm(FlaskForm):
     body = StringField('body',validators=[DataRequired()])
+
+class EditForm(FlaskForm):
+    username = StringField('username',validators=[DataRequired()])
+    about_me = StringField('about_me',validators=[Length(min=1, max=140)])

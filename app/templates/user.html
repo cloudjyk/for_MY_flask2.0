@@ -16,7 +16,7 @@
             {% endif %}
             <p>{{ user.about_me }}</p>
             {% if g.user.username == user.username %}
-            <p><a href="url_for('edit')">edit my info</a></p>
+            <p><a href="{{url_for('edit',username = g.user.username)}}">edit my info</a></p>
             {% endif %}
         </td>
     </tr>
