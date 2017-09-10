@@ -3,6 +3,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length
+import re
 
 class LoginForm(FlaskForm):
     """docstring for LoginForm"""
@@ -24,10 +25,11 @@ class RegForm(FlaskForm):
     email = StringField('email',validators=[DataRequired()])
     remember_me = BooleanField('remember_me', default = True)
     def pw_check(self):
-        if self.password == self.password2:
+        if self.password.data == self.password2.data:
             return True
     def email_check(self):
-        return True
+        if re.match(r'^[0-9a-zA-Z][0-9a-zA-Z\-\_\s]*@[a-zA-Z0-9]+\.com(\.cn)?$', self.email.data):
+            return True
 
 class PostForm(FlaskForm):
     body = StringField('body',validators=[DataRequired()])

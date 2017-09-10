@@ -21,7 +21,7 @@
                         <label class="control-label" for="post">Say something:</label>
                         <div class="controls">
                             {{ form.body(size = 30, maxlength = 140) }}
-                            {% for error in form.errors.post %}
+                            {% for error in form.errors.body %}
                                 <span class="help-inline">[{{error}}]</span><br>
                             {% endfor %}
                         </div>
@@ -37,9 +37,19 @@
     </form>
 </div>
 
-{% for post in posts %}
+{% for post in posts.items %}
     {% include 'post.html' %}
 {% endfor %}
-
+{% if posts.has_prev %}
+<a href="{{ url_for('index', page = posts.prev_num) }}"><< Newer posts</a>
+{% else %}
+<< Newer posts
+{% endif %}
+page {{ posts.page }}
+{% if posts.has_next %}
+<a href="{{ url_for('index', page = posts.next_num) }}">Older posts >></a>
+{% else %}
+Older posts >>
+{% endif %}
 
 {% endblock %}

@@ -26,6 +26,7 @@
             <ul class="nav">
               <li><a href="{{ url_for('index') }}">Home</a></li>
               {% if not g.user.is_authenticated %}
+              <li><a href="{{ url_for('login') }}">Login</a></li>
               <li><a href="{{ url_for('register') }}">Register</a></li>
               {% endif %}
               {% if g.user.is_authenticated %}
