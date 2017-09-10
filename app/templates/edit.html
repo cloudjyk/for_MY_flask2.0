@@ -24,7 +24,7 @@
                         {% endfor %}
                     </div>
                     <div class="controls">
-                        about_me:{{ form.about_me(size = 80, class = "span4") }}
+                        about_me:{{ form.about_me(cols = 64, rows = 4, class = "span4") }}
                         {% for error in form.errors.about_me %}
                             <span class="help-inline">[{{error}}]</span><br>
                         {% endfor %}

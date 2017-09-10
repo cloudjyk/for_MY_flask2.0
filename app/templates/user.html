@@ -12,7 +12,7 @@
         <td>
             <p>{{ user.username }}</p>
             {% if g.user.username != user.username %}
-            <p><a href="http://www.baidu.com">follow</a> | <a href="http://www.baidu.com">unfollow</a></p>
+            <p>{{ user.followers.count()-1 }} followers | {{ user.followed.count()-1 }} followeds | <a href="{{url_for('follow', username = user.username)}}">follow</a> | <a href="{{url_for('unfollow', username = user.username)}}">unfollow</a></p>
             {% endif %}
             <p>{{ user.about_me }}</p>
             {% if g.user.username == user.username %}

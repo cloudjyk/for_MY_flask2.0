@@ -32,7 +32,24 @@ def index(page = 1):
         return redirect(url_for('index'))
     # posts = Post.query.filter_by(user_id=g.user.get_id())[::-1]
     # posts = Post.query.filter_by(author=g.user)[::-1]
-    posts = Post.query.filter_by(author=g.user).order_by(Post.timestamp.desc())
+    posts = g.user.followed_posts().order_by(Post.timestamp.desc())
+    # print(type(g.user.followed_posts().all()))
+    # print(type(g.user.posts.all()))
+    # posts = g.user.followed_posts().all()+g.user.posts.all()
+    # print(type(posts))
+    # print(posts)
+    # for i in posts:
+    #     print(i.timestamp)
+    # posts = sorted(posts,key = lambda x:x.timestamp)
+    # print(type(posts))
+    # print(posts)
+    # for i in posts:
+    #     print('\n',i,'\n')
+    # for i in g.user.followers:
+    #     print('\n',i,'\n')
+    # for i in g.user.followed:
+    #     print('\n',i,'\n')
+    # posts = g.user.posts.order_by(Post.timestamp.desc())
     posts = posts.paginate(page, POSTS_PER_PAGE, False)
     return render_template('index.html',
         title = 'Home',
@@ -57,6 +74,9 @@ def login():
         elif User.query.filter_by(username = form.username.data).first().password == md5(form.password.data.encode('utf-8')).hexdigest():
             flash('Login successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
             login_user(User.query.filter_by(username = form.username.data).first(), form.remember_me.data)
+            u = g.user.follow(g.user)
+            db.session.add(u)
+            db.session.commit()
             return redirect('/index')
     return render_template('login.html', title = 'Sign In', form = form)
 
@@ -87,7 +107,8 @@ def register():
 def user(username, page = 1):
     if User.query.filter_by(username = username).first() != None:
         user = User.query.filter_by(username = username).first()
-        posts = Post.query.filter_by(author = user).order_by(Post.timestamp.desc())
+        # posts = Post.query.filter_by(author = user).order_by(Post.timestamp.desc())
+        posts = user.posts.order_by(Post.timestamp.desc())
         posts = posts.paginate(page, POSTS_PER_PAGE, False)
         return render_template('user.html',
             title = 'Home',
@@ -107,6 +128,9 @@ def edit(username):
     if form.validate_on_submit():
         if form.username.data != g.user.username and User.query.filter_by(username = form.username.data).first() != None:
             flash('This username has been occupied!')
+            # form.username.data = g.user.username
+            # form.about_me.data = g.user.about_me
+            return redirect(url_for('edit', username = g.user.username))
         else:
             # former_username = g.user.username
             g.user.username = form.username.data
@@ -116,6 +140,9 @@ def edit(username):
             db.session.commit()
             logout_user()
             login_user(User.query.filter_by(username = form.username.data).first())
+            u = g.user.follow(g.user)
+            db.session.add(u)
+            db.session.commit()
             # login_user(u)            
             # if former_username != form.username.data:
             #     print('delete',former_username)
@@ -131,6 +158,31 @@ def edit(username):
         user = g.user,
         form = form)
 
+@app.route('/follow/<username>', methods = ['GET', 'POST'])
+@login_required
+def follow(username):
+    u = g.user.follow(User.query.filter_by(username = username).first())
+    db.session.add(u)
+    db.session.commit()
+    flash('You have followed %s'%username)
+    return redirect(url_for('user', username = username))
+
+@app.route('/unfollow/<username>', methods = ['GET', 'POST'])
+@login_required
+def unfollow(username):
+    u = g.user.unfollow(User.query.filter_by(username = username).first())
+    db.session.add(u)
+    db.session.commit()
+    flash('You have unfollowed %s'%username)
+    return redirect(url_for('user', username = username))
+
+@app.route('/post_del/<post_id>')
+@login_required
+def post_del(post_id):
+    p = Post.query.filter_by(id = post_id).first()
+    db.session.delete(p)
+    db.session.commit()
+    return redirect(url_for('user', username = g.user.username))
 
 @app.route('/logout')
 def logout():
