@@ -75,8 +75,9 @@ def login():
             flash('Login successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
             login_user(User.query.filter_by(username = form.username.data).first(), form.remember_me.data)
             u = g.user.follow(g.user)
-            db.session.add(u)
-            db.session.commit()
+            if u != None:
+                db.session.add(u)
+                db.session.commit()
             return redirect('/index')
     return render_template('login.html', title = 'Sign In', form = form)
 
@@ -100,7 +101,7 @@ def register():
             db.session.commit()
             flash('Register successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
             return redirect(url_for('login'))
-    return render_template('Register.html', title = 'Sign In', form = form)
+    return render_template('register.html', title = 'Register', form = form)
 
 @app.route('/user/<username>', methods = ['GET', 'POST'])
 @app.route('/user/<username>/<int:page>', methods = ['GET', 'POST'])
