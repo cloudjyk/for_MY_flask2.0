@@ -145,9 +145,11 @@ def edit(username):
             db.session.commit()
             logout_user()
             login_user(User.query.filter_by(username = form.username.data).first())
-            u = g.user.follow(g.user)
-            db.session.add(u)
-            db.session.commit()
+            # u = g.user.follow(g.user)
+            # print('\n',u,'\n')
+            # if u != None:
+            #     db.session.add(u)
+            #     db.session.commit()
             # login_user(u)            
             # if former_username != form.username.data:
             #     print('delete',former_username)
