@@ -14,6 +14,9 @@
             <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
         </td>
         <td>
+            {% if user.last_seen %}
+            <p><em>Last seen: {{momentjs(user.last_seen).calendar()}}</em></p>
+            {% endif %}
             <p>{{ user.followers.count()-1 }} followers | {{ user.followed.count()-1 }} followeds</p>
         </td>
     </tr>

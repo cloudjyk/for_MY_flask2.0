@@ -73,7 +73,11 @@ def login():
             flash('invalid user!')
         elif User.query.filter_by(username = form.username.data).first().password == md5(form.password.data.encode('utf-8')).hexdigest():
             flash('Login successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
-            login_user(User.query.filter_by(username = form.username.data).first(), form.remember_me.data)
+            u = User.query.filter_by(username = form.username.data).first()
+            u.last_seen = datetime.utcnow()
+            db.session.add(u)
+            db.session.commit()
+            login_user(u, form.remember_me.data)
             u = g.user.follow(g.user)
             if u != None:
                 db.session.add(u)
@@ -189,3 +193,14 @@ def post_del(post_id):
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+# error customized
+
+@app.errorhandler(404)
+def internal_error(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    db.session.rollback()
+    return render_template('500.html'), 500

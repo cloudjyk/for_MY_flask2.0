@@ -11,6 +11,9 @@
         <td width="140px"><a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}" /></a></td>
         <td>
             <p>{{ user.username }}</p>
+            {% if user.last_seen %}
+            <p><em>Last seen: {{momentjs(user.last_seen).calendar()}}</em></p>
+            {% endif %}
             {% if g.user.username != user.username %}
             <p>{{ user.followers.count()-1 }} followers | {{ user.followed.count()-1 }} followeds | <a href="{{url_for('follow', username = user.username)}}">follow</a> | <a href="{{url_for('unfollow', username = user.username)}}">unfollow</a></p>
             {% endif %}
