@@ -8,7 +8,7 @@
 {% include 'flash.html' %}
 <table class="table table-hover">
     <tr>
-        <td width="140px"><a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}" /></a></td>
+        <td width="140px"><a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar}}" /></a></td>
         <td>
             <p>{{ user.username }}</p>
             {% if user.last_seen %}

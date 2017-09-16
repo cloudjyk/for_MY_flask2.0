@@ -2,12 +2,14 @@
 # -*- coding: utf-8 -*-
 from flask import render_template, url_for, flash, redirect, session, request, g
 from flask_login import login_user, logout_user, current_user, login_required
-from app import app, db, lm
-from config import POSTS_PER_PAGE
+from app import app, db, lm, avatars
+from config import POSTS_PER_PAGE, UPLOADED_AVATARS_DEST
 from .forms import LoginForm, RegForm, PostForm, EditForm
 from .models import User, Post
 from hashlib import md5
 from datetime import datetime
+
+import re
 
 @app.before_request
 def before_request():
@@ -140,6 +142,15 @@ def edit(username):
             return redirect(url_for('edit', username = g.user.username))
         else:
             # former_username = g.user.username
+            # print(form.avatar.data.mimetype)
+            if form.avatar.data:
+                filename = avatars.save(form.avatar.data)
+                file_url = avatars.url(filename)
+                # g.user.avatar = avatardir+'\\'+g.user.username+'\.'+re.split(r'[\.]+',form.avatar.data.filename)[1]
+                # g.user.avatar = UPLOADED_AVATARS_DEST+'\\'+form.avatar.data.filename
+                # g.user.avatar = '../sources/avatars'+'/'+form.avatar.data.filename
+                g.user.avatar = file_url
+            # print(g.user.avatar)
             g.user.username = form.username.data
             g.user.about_me = form.about_me.data
             u = g.user

@@ -29,3 +29,8 @@ MAIL_PASSWORD = None
 
 # administrator list
 ADMINS = ['you@example.com']
+
+# avatars
+from flask_uploads import IMAGES
+UPLOADED_AVATARS_DEST = basedir+'\\app\\sources\\avatars'
+UPLOADED_AVATARS_ALLOW = IMAGES

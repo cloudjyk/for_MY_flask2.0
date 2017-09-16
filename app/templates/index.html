@@ -11,7 +11,7 @@
 <table>
     <tr>
         <td>
-            <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+            <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar}}"></a>
         </td>
         <td>
             {% if user.last_seen %}

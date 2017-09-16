@@ -5,12 +5,20 @@
 <p></p>
 {% include 'flash.html' %}
 <div class="well">
-    <form class="form-horizontal" action="" method="post" name="post">
+    <form class="form-horizontal" action="" method="post" name="post" enctype="multipart/form-data">
         {{form.hidden_tag()}}
         <table class="table table-hover">
             <tr>
                 <td>
-                    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+                    <p>头像预览：</p>
+                    <p></p><div id="test-image-preview" style="border: 1px solid #ccc; width: 200px; height: 200px; background-size: contain; background-repeat: no-repeat; background-position: center center;"></div><p></p>
+                    <p>
+                        上传头像:<p></p>
+                        {{ form.avatar(cols = 64, rows = 4, class = "span3") }}
+                        {% for error in form.errors.avatar %}
+                            <span class="help-inline">[{{error}}]</span><br>
+                        {% endfor %}
+                    </p>   
                 </td>
                 <td>
                     <div class="controls">
@@ -25,15 +33,62 @@
                             <span class="help-inline">[{{error}}]</span><br>
                         {% endfor %}
                     </div>
-                    <div class="control-group">
+                    <div class="control-group" align="center">
                         <div class="controls">
                             <input class="btn btn-primary" type="submit" value="Save changes!">
+                            <button type="button" class="btn">Cancel</button>
                         </div>
                     </div>
                 </td>
             </tr>
         </table>
+        <p id="test-file-info"></p>
     </form>
 </div>
+
+
+
+<script>
+$(function() {
+    var fileInput = document.getElementById('avatar');
+    var info = document.getElementById('test-file-info');
+    var preview = document.getElementById('test-image-preview');
+    fileInput.addEventListener('change', function () {
+        preview.style.backgroundImage = '';
+        if (!fileInput.value) {
+            info.innerHTML = '没有选择文件';
+            return;
+        }
+        var file = fileInput.files[0];
+        info.innerHTML = '文件: ' + file.name + '<br>' +
+                         '大小: ' + file.size + '<br>' +
+                         '修改: ' + file.lastModifiedDate;
+        if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+            alert('不是有效的图片文件!');
+            return;
+        }
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var
+                data = e.target.result;
+                index = data.indexOf(';base64,');
+            preview.style.backgroundImage = 'url(' + data + ')';
+
+            // form.avatar.data = data;
+            // alert(preview.style.backgroundImage);
+        };
+        reader.readAsDataURL(file);
+    });
+});
+</script>
+
+<form method="post" action="" enctype="multipart/form-data">
+    
+</form>
+
+
+
+
+
 {% endblock %}
 

@@ -4,8 +4,15 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+
+
 app = Flask(__name__)
 app.config.from_object('config')
+
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+avatars = UploadSet('AVATARS',IMAGES)
+configure_uploads(app, avatars)
+patch_request_class(app)
 
 db = SQLAlchemy(app)
 
@@ -46,7 +53,7 @@ if not app.debug:
     app.logger.info('microblog startup')
 
 from app import views, forms, models
-from config import USER_LIST
+# from config import USER_LIST
 
 # for i in USER_LIST:
 #     u = models.User(username=i['username'], password=i['password'], email=i['email'])

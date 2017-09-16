@@ -20,6 +20,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(64), index = True, unique = True)
     password = db.Column(db.String(64), index = True)
+    avatar = db.Column(db.String(140), index = True)
     email = db.Column(db.String(120), index = True, unique = True)
     about_me = db.Column(db.String(140))
     last_seen = db.Column(db.DateTime)
@@ -49,9 +50,9 @@ class User(db.Model):
     def __repr__(self):
         return '<User %r>' % self.username
 
-    def avatar(self,size):
-        # return 'http://www.gravatar.com/avatar/' + '205e460b479e2e5b48aec07710c08d50' + '?d=mm&s=' + str(size)
-        return 'http://www.gravatar.com/avatar/' + md5(self.email.encode('utf-8')).hexdigest() + '?d=mm&s=' + str(size)
+    # def avatar(self,size):
+    #     # return 'http://www.gravatar.com/avatar/' + '205e460b479e2e5b48aec07710c08d50' + '?d=mm&s=' + str(size)
+    #     return 'http://www.gravatar.com/avatar/' + md5(self.email.encode('utf-8')).hexdigest() + '?d=mm&s=' + str(size)
     @staticmethod
     def make_unique_nickname(username):
         if User.query.filter_by(username = username).first() == None:

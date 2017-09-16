@@ -2,8 +2,14 @@
 # -*- coding: utf-8 -*-
 from flask_wtf import FlaskForm
 from wtforms import StringField, BooleanField, TextAreaField
+
+from flask_wtf.file import FileField, FileRequired, FileAllowed
+from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
+
 from wtforms.validators import DataRequired, Length
 import re
+
+photos = UploadSet('photos', IMAGES)
 
 class LoginForm(FlaskForm):
     """docstring for LoginForm"""
@@ -37,3 +43,6 @@ class PostForm(FlaskForm):
 class EditForm(FlaskForm):
     username = StringField('username',validators=[DataRequired()])
     about_me = StringField('about_me',validators=[Length(min=1, max=140)])
+    avatar = FileField('avatar')
+    # avatar = FileField('avatar',validators=[FileAllowed(photos, u'只能上传图片！'),FileRequired(u'文件未选择!')])
+
