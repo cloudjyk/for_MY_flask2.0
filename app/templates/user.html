@@ -15,7 +15,7 @@
             <p><em>Last seen: {{momentjs(user.last_seen).calendar()}}</em></p>
             {% endif %}
             {% if g.user.username != user.username %}
-            <p>{{ user.followers.count()-1 }} followers | {{ user.followed.count()-1 }} followeds | <a href="{{url_for('follow', username = user.username)}}">follow</a> | <a href="{{url_for('unfollow', username = user.username)}}">unfollow</a></p>
+            <p>{{ user.followers.count()-1 }} followers | {{ user.followed.count()-1 }} followeds | {% if not g.user.is_following(user) %}<a href="{{url_for('follow', username = user.username)}}">follow</a>{% else %}follow{% endif %}| <a href="{{url_for('unfollow', username = user.username)}}">unfollow</a></p>
             {% endif %}
             <p>{{ user.about_me }}</p>
             {% if g.user.username == user.username %}

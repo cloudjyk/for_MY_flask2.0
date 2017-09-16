@@ -2063,3 +2063,1413 @@ Traceback (most recent call last):
 sqlalchemy.orm.exc.UnmappedInstanceError: Class 'builtins.NoneType' is not mapped
 2017-09-11 20:50:00,714 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
 2017-09-11 20:50:25,189 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:30:50,424 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:30:58,610 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:00,906 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:03,069 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:10,123 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:17,448 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:19,485 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:25,425 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:31:57,503 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:32:59,545 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:33:25,325 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:33:28,741 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:33:30,819 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:33:32,875 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:36:06,383 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:36:11,328 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:36:13,394 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:37:09,035 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:37:12,389 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:37:14,461 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:37:17,881 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:38:53,411 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:38:53,460 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:38:53,504 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:41:25,906 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:41:29,577 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:41:29,631 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:41:29,974 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:41:35,021 ERROR: Exception on /index [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 58, in index
+    posts = posts)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 134, in render_template
+    context, ctx.app)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\templating.py", line 116, in _render
+    rv = template.render(context)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\jinja2\_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\base.html", line 42, in top-level template code
+    {% block content %}{% endblock %}
+  File "F:\PYweb\for_MY_flask2.0\app\templates\index.html", line 14, in block "content"
+    <a href="{{url_for('user', username = user.username)}}"><img src="{{user.avatar(140)}}"></a>
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 333, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1805, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\helpers.py", line 323, in url_for
+    force_external=external)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\routing.py", line 1768, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'user'. Did you forget to specify values ['page', 'username']?
+2017-09-16 09:42:05,524 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:05,592 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,216 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,262 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,293 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,322 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,340 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,357 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,373 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:16,412 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.nickname.data = g.user.nickname
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:46,986 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.username.data = g.user.username
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:47,041 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.username.data = g.user.username
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:42:48,821 ERROR: Exception on /user/cloudjyk1/edit [GET] [in C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py:1560]
+Traceback (most recent call last):
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\_compat.py", line 33, in reraise
+    raise value
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask\app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\flask_login\utils.py", line 228, in decorated_view
+    return func(*args, **kwargs)
+  File "F:\PYweb\for_MY_flask2.0\app\views.py", line 165, in edit
+    form.username.data = g.user.username
+  File "C:\Users\Cloudjyk\AppData\Local\Programs\Python\Python35\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'nickname'
+2017-09-16 09:43:48,251 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 09:46:41,095 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:47:50,756 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:49:28,962 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:51:14,160 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:51:15,396 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:51:47,289 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:52:32,119 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:52:33,202 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 10:52:56,316 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:03:52,255 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:03:53,354 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:05:04,752 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:05:05,830 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:05:56,426 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:05:57,525 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:06:55,114 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 11:06:56,188 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:20:42,876 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:20:43,838 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:22:52,958 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:23:28,038 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:23:28,967 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:25:51,415 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:25:52,394 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:31:02,072 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:31:03,076 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:41:55,684 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:41:56,643 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:47:14,703 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:47:15,694 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:48:44,569 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:48:45,521 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:50:12,794 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:50:13,790 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:56:00,139 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:56:01,116 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:57:59,673 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:58:00,623 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:59:14,070 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 15:59:15,051 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:06:45,606 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:06:46,583 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:09:52,704 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:09:56,879 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:09:58,932 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:11:48,754 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 16:11:49,696 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 21:32:40,340 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 21:32:41,467 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 21:33:37,865 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]
+2017-09-16 21:33:38,947 INFO: microblog startup [in F:\PYweb\for_MY_flask2.0\app\__init__.py:46]

@@ -70,19 +70,21 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         if User.query.filter_by(username = form.username.data).first() == None:
-            flash('invalid user!')
-        elif User.query.filter_by(username = form.username.data).first().password == md5(form.password.data.encode('utf-8')).hexdigest():
-            flash('Login successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
-            u = User.query.filter_by(username = form.username.data).first()
-            u.last_seen = datetime.utcnow()
+            flash('Invalid user!')
+        if User.query.filter_by(username = form.username.data).first().password != form.password.data:
+            flash('Wrong password!')
+        flash('Login successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
+        u = User.query.filter_by(username = form.username.data).first()
+        u.last_seen = datetime.utcnow()
+        print(form.password.data)
+        db.session.add(u)
+        db.session.commit()
+        login_user(u, form.remember_me.data)
+        u = g.user.follow(g.user)
+        if u != None:
             db.session.add(u)
             db.session.commit()
-            login_user(u, form.remember_me.data)
-            u = g.user.follow(g.user)
-            if u != None:
-                db.session.add(u)
-                db.session.commit()
-            return redirect('/index')
+        return redirect('/index')
     return render_template('login.html', title = 'Sign In', form = form)
 
 @app.route('/register', methods = ['GET', 'POST'])
@@ -160,6 +162,9 @@ def edit(username):
             #
             flash('Your changes have been saved.')
             return redirect(url_for('user', username = form.username.data))
+    else:
+        form.username.data = g.user.username
+        form.about_me.data = g.user.about_me
     return render_template('edit.html',
         title = 'Edit your info',
         user = g.user,

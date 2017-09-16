@@ -1,11 +1,7 @@
 <!-- extend base layout -->
 {% extends "base.html" %}
-
 {% block content %}
-
-
 <h1>Hi, {{ g.user.username }}!</h1>
-
 <p></p>
 {% include 'flash.html' %}
 <div class="well">
@@ -39,6 +35,5 @@
         </table>
     </form>
 </div>
-
-
 {% endblock %}
+
