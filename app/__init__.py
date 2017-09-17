@@ -10,22 +10,16 @@ app = Flask(__name__)
 app.config.from_object('config')
 
 from flask_uploads import UploadSet, configure_uploads, IMAGES, patch_request_class
-avatars = UploadSet('AVATARS',IMAGES)
+avatars = UploadSet('AVATARS', IMAGES)
 configure_uploads(app, avatars)
 patch_request_class(app)
 
 db = SQLAlchemy(app)
-
 lm = LoginManager()
 lm.init_app(app)
 #设置登录视图，很关键
 lm.login_view = 'login'
-######
-# from flask_openid import OpenID
-# import os
-# from config import basedir
-# oid = OpenID(app, os.path.join(basedir, 'tmp'))
-######
+
 
 # time module
 from .momentjs import momentjs
@@ -53,9 +47,3 @@ if not app.debug:
     app.logger.info('microblog startup')
 
 from app import views, forms, models
-# from config import USER_LIST
-
-# for i in USER_LIST:
-#     u = models.User(username=i['username'], password=i['password'], email=i['email'])
-#     db.session.add(u)
-# db.session.commit()

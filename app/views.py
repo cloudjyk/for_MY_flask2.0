@@ -3,13 +3,11 @@
 from flask import render_template, url_for, flash, redirect, session, request, g
 from flask_login import login_user, logout_user, current_user, login_required
 from app import app, db, lm, avatars
-from config import POSTS_PER_PAGE, UPLOADED_AVATARS_DEST
+from config import POSTS_PER_PAGE
 from .forms import LoginForm, RegForm, PostForm, EditForm
 from .models import User, Post
-from hashlib import md5
 from datetime import datetime
 
-import re
 
 @app.before_request
 def before_request():
@@ -137,20 +135,17 @@ def edit(username):
     if form.validate_on_submit():
         if form.username.data != g.user.username and User.query.filter_by(username = form.username.data).first() != None:
             flash('This username has been occupied!')
-            # form.username.data = g.user.username
-            # form.about_me.data = g.user.about_me
             return redirect(url_for('edit', username = g.user.username))
         else:
-            # former_username = g.user.username
-            # print(form.avatar.data.mimetype)
             if form.avatar.data:
+                print(form.avatar.data.stream)
                 filename = avatars.save(form.avatar.data)
+                print(filename)
                 file_url = avatars.url(filename)
                 # g.user.avatar = avatardir+'\\'+g.user.username+'\.'+re.split(r'[\.]+',form.avatar.data.filename)[1]
                 # g.user.avatar = UPLOADED_AVATARS_DEST+'\\'+form.avatar.data.filename
                 # g.user.avatar = '../sources/avatars'+'/'+form.avatar.data.filename
                 g.user.avatar = file_url
-            # print(g.user.avatar)
             g.user.username = form.username.data
             g.user.about_me = form.about_me.data
             u = g.user
@@ -158,19 +153,6 @@ def edit(username):
             db.session.commit()
             logout_user()
             login_user(User.query.filter_by(username = form.username.data).first())
-            # u = g.user.follow(g.user)
-            # print('\n',u,'\n')
-            # if u != None:
-            #     db.session.add(u)
-            #     db.session.commit()
-            # login_user(u)            
-            # if former_username != form.username.data:
-            #     print('delete',former_username)
-            #     db.session.delete(User.query.filter_by(username = former_username).first())
-            #     db.session.commit()
-            #
-            # g.user = current_user
-            #
             flash('Your changes have been saved.')
             return redirect(url_for('user', username = form.username.data))
     else:

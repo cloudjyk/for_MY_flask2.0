@@ -38,7 +38,7 @@ class RegForm(FlaskForm):
             return True
 
 class PostForm(FlaskForm):
-    body = StringField('body',validators=[DataRequired()])
+    body = TextAreaField('body',validators=[DataRequired()])
 
 class EditForm(FlaskForm):
     username = StringField('username',validators=[DataRequired()])

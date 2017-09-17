@@ -11,7 +11,7 @@
             <tr>
                 <td>
                     <p>头像预览：</p>
-                    <p></p><div id="test-image-preview" style="border: 1px solid #ccc; width: 200px; height: 200px; background-size: contain; background-repeat: no-repeat; background-position: center center;"></div><p></p>
+                    <p></p><div id="avatar-preview" style="border: 1px solid #ccc; width: 200px; height: 200px; background-size: contain; background-repeat: no-repeat; background-position: center center;"></div><p></p>
                     <p>
                         上传头像:<p></p>
                         {{ form.avatar(cols = 64, rows = 4, class = "span3") }}
@@ -36,13 +36,13 @@
                     <div class="control-group" align="center">
                         <div class="controls">
                             <input class="btn btn-primary" type="submit" value="Save changes!">
-                            <button type="button" class="btn">Cancel</button>
+                            <button class="btn" type="reset" value="Reset">Reset</button>
                         </div>
                     </div>
                 </td>
             </tr>
         </table>
-        <p id="test-file-info"></p>
+        <p id="avatar-info"></p>
     </form>
 </div>
 
@@ -51,8 +51,8 @@
 <script>
 $(function() {
     var fileInput = document.getElementById('avatar');
-    var info = document.getElementById('test-file-info');
-    var preview = document.getElementById('test-image-preview');
+    var info = document.getElementById('avatar-info');
+    var preview = document.getElementById('avatar-preview');
     fileInput.addEventListener('change', function () {
         preview.style.backgroundImage = '';
         if (!fileInput.value) {
@@ -81,14 +81,5 @@ $(function() {
     });
 });
 </script>
-
-<form method="post" action="" enctype="multipart/form-data">
-    
-</form>
-
-
-
-
-
 {% endblock %}
 
