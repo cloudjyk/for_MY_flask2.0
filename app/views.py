@@ -30,26 +30,7 @@ def index(page = 1):
         # form.body.data = ''
         # 防止重复提交
         return redirect(url_for('index'))
-    # posts = Post.query.filter_by(user_id=g.user.get_id())[::-1]
-    # posts = Post.query.filter_by(author=g.user)[::-1]
-    posts = g.user.followed_posts().order_by(Post.timestamp.desc())
-    # print(type(g.user.followed_posts().all()))
-    # print(type(g.user.posts.all()))
-    # posts = g.user.followed_posts().all()+g.user.posts.all()
-    # print(type(posts))
-    # print(posts)
-    # for i in posts:
-    #     print(i.timestamp)
-    # posts = sorted(posts,key = lambda x:x.timestamp)
-    # print(type(posts))
-    # print(posts)
-    # for i in posts:
-    #     print('\n',i,'\n')
-    # for i in g.user.followers:
-    #     print('\n',i,'\n')
-    # for i in g.user.followed:
-    #     print('\n',i,'\n')
-    # posts = g.user.posts.order_by(Post.timestamp.desc())
+    posts = g.user.followed_posts()
     posts = posts.paginate(page, POSTS_PER_PAGE, False)
     return render_template('index.html',
         title = 'Home',
@@ -138,13 +119,10 @@ def edit(username):
             return redirect(url_for('edit', username = g.user.username))
         else:
             if form.avatar.data:
-                print(form.avatar.data.stream)
+                # print(form.avatar.data.stream)
                 filename = avatars.save(form.avatar.data)
-                print(filename)
+                # print(filename)
                 file_url = avatars.url(filename)
-                # g.user.avatar = avatardir+'\\'+g.user.username+'\.'+re.split(r'[\.]+',form.avatar.data.filename)[1]
-                # g.user.avatar = UPLOADED_AVATARS_DEST+'\\'+form.avatar.data.filename
-                # g.user.avatar = '../sources/avatars'+'/'+form.avatar.data.filename
                 g.user.avatar = file_url
             g.user.username = form.username.data
             g.user.about_me = form.about_me.data
