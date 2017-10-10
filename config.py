@@ -32,5 +32,8 @@ ADMINS = ['you@example.com']
 
 # avatars
 from flask_uploads import IMAGES
+# mac
+# UPLOADED_AVATARS_DEST = basedir+'/app/sources/avatars'
+# windows
 UPLOADED_AVATARS_DEST = basedir+'\\app\\sources\\avatars'
 UPLOADED_AVATARS_ALLOW = IMAGES
