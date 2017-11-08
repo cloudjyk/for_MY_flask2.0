@@ -7,6 +7,7 @@ from config import POSTS_PER_PAGE
 from .forms import LoginForm, RegForm, PostForm, EditForm
 from .models import User, Post
 from datetime import datetime
+from hashlib import md5
 
 
 @app.before_request
@@ -54,6 +55,8 @@ def login():
             flash('Invalid user!')
         if User.query.filter_by(username = form.username.data).first().password != form.password.data:
             flash('Wrong password!')
+            form.password.data = ''
+            return render_template('login.html', title = 'Sign In', form = form)
         flash('Login successfully for user:"' + form.username.data + '", remember_me=' + str(form.remember_me.data))
         u = User.query.filter_by(username = form.username.data).first()
         u.last_seen = datetime.utcnow()
